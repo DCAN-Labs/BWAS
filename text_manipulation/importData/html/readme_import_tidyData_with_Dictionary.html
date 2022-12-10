@@ -1,0 +1,197 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Using importData tools</title><meta name="generator" content="MATLAB 9.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-01-30"><meta name="DC.source" content="readme_import_tidyData_with_Dictionary.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Using importData tools</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Repo location</a></li><li><a href="#2">Intro</a></li><li><a href="#3">Usage</a></li><li><a href="#4">Show the size of the outputs (ie, tidyData and Dictionary)</a></li><li><a href="#5">Show the content of the dictionary</a></li><li><a href="#6">Show the first elements of the actual data</a></li><li><a href="#7">More details</a></li><li><a href="#8">Post usage recomendations</a></li><li><a href="#9">Credits</a></li></ul></div><h2 id="1">Repo location</h2><p>https://gitlab.com/Fair_lab/text_manipulation</p><h2 id="2">Intro</h2><p>Lack of consistency sharing data might lead to delays on analysis (see   Wickham manuscript included here). The function   import_tidyData_with_Dictionary aims to simplify the process if a few   simple rules are followed.</p><p>import_tidyData_with_Dictionary is a function for Matlab that requires 2 mandatory csv files:  a dictionary (Dictionary_filename) where each row has the variables' description which are the headres of the file with data (tidyData_filename).</p><p>This function expects the dictionary to have the following 5 mandatory columns:</p><div><ol><li>Variable_name</li><li>Variable_type: only allowed values are alphanumeric or numeric</li><li>Description: Would be nice of you indicate what the variable means</li><li>Range: Expected range in values (it is fine if you provide no info)</li><li>Units: Self-descriptive (it is fine if you provide no info)</li></ol></div><p>Data provided in the tidyData_filename must have as headers the variables indicaded in the first columns of the Dictionary</p><h2 id="3">Usage</h2><p>You can give it a try using the provided example files and running the following commands on your Matlab session:</p><pre class="codeinput">Dictionary_filename=<span class="string">'Dictionary_for_random_data.csv'</span>;
+tidyData_filename=<span class="string">'random_data.csv'</span>;
+[tidyData, Dictionary] = import_tidyData_with_Dictionary(Dictionary_filename,tidyData_filename);
+</pre><h2 id="4">Show the size of the outputs (ie, tidyData and Dictionary)</h2><pre class="codeinput">whos <span class="string">tidyData</span> <span class="string">Dictionary</span>
+</pre><pre class="codeoutput">  Name              Size             Bytes  Class    Attributes
+
+  Dictionary        8x5               6207  table              
+  tidyData        129x8             126615  table              
+
+</pre><h2 id="5">Show the content of the dictionary</h2><pre class="codeinput">Dictionary
+</pre><pre class="codeoutput">
+Dictionary =
+
+  8&times;5 table
+
+    Variable_name    Variable_type     Description    Range    Units
+    _____________    ______________    ___________    _____    _____
+
+    "SubjectID"      'alphanumeric'    ''             ''       ''   
+    "Sex"            'alphanumeric'    ''             ''       ''   
+    "test"           'alphanumeric'    ''             ''       ''   
+    "Freq"           'numeric'         ''             ''       'Hz' 
+    "AMP"            'numeric'         ''             ''       'pA' 
+    "Rise Time"      'numeric'         ''             ''       'ms' 
+    "Decay Time"     'numeric'         ''             ''       'ms' 
+    "AREA"           'numeric'         ''             ''       'fC' 
+
+</pre><h2 id="6">Show the first elements of the actual data</h2><pre class="codeinput">tidyData(1:10,:)
+</pre><pre class="codeoutput">
+ans =
+
+  10&times;8 table
+
+    SubjectID    Sex      test         Freq        AMP       Rise_Time    Decay_Time      AREA  
+    _________    ___    _________    ________    ________    _________    __________    ________
+
+    '31287'      'M'    'PU IPSC'    [0.1068]    [1.1928]    [2.1415]     [0.7839]      [0.9184]
+    '31503'      'F'    'PU IPSC'    [2.4957]    [6.1997]    [2.2471]     [1.9798]      [1.5533]
+    '32041'      'F'    'PU IPSC'    [5.4677]    [1.5826]    [0.3239]     [2.9823]      [0.1011]
+    '32050'      'F'    'PU IPSC'    [3.5536]    [5.8354]    [0.9491]     [0.7901]      [0.4555]
+    '32228'      'M'    'PU IPSC'    [0.5190]    [0.4047]    [0.4674]     [0.0294]      [1.0455]
+    '32207'      'M'    'PU IPSC'    [0.3884]    [0.3260]    [1.1966]     [2.7089]      [0.5228]
+    '32269'      'M'    'PU IPSC'    [0.7380]    [0.6823]    [1.0176]     [2.1150]      [0.8611]
+    '31418'      'M'    'PU IPSC'    [0.0653]    [1.9187]    [1.3155]     [2.2006]      [3.5560]
+    '31348'      'F'    'PU IPSC'    [1.2265]    [0.9818]    [0.1772]     [4.7574]      [2.0087]
+    '31970'      'M'    'PU IPSC'    [3.3117]    [0.4047]    [8.7378]     [0.2701]      [0.5576]
+
+</pre><h2 id="7">More details</h2><p>As you can see, the file Dictionary_for_random_data has the 5 mandatory columns that describe the data that will be imported. The second column of the dictionary (Variable_type)is used to format the data contained in random_data.csv. This Dictionary also indicates that the data has 8 variables:</p><div><ol><li>SubjectID,</li><li>Sex,</li><li>test,</li><li>Freq,</li><li>AMP,</li><li>Rise Time,</li><li>Decay Time, and</li><li>AREA.</li></ol></div><p>As expected, the file random_data.csv has 8 columns, each corresponding to the variables described in the dictionary.</p><h2 id="8">Post usage recomendations</h2><p>Do not forget to double check and compare the content of the outputs tidyData and Dictionary with the files random_data.csv and Dictionary_for_random_data.csv respectively</p><h2 id="9">Credits</h2><p>Developer: Oscar Miranda-Dominguez</p><p>First line of code: Jan 24, 2019</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Using importData tools
+%
+%% Repo location
+%
+% https://gitlab.com/Fair_lab/text_manipulation
+%% Intro
+%
+% Lack of consistency sharing data might lead to delays on analysis (see
+%   Wickham manuscript included here). The function
+%   import_tidyData_with_Dictionary aims to simplify the process if a few
+%   simple rules are followed. 
+%
+% import_tidyData_with_Dictionary is a function for Matlab that requires 2
+% mandatory csv files:  a dictionary
+% (Dictionary_filename) where each row has the variables' description which
+% are the headres of the file with data (tidyData_filename). 
+%
+% This function expects the dictionary to have the following 5 mandatory
+% columns:
+%
+% # Variable_name
+% # Variable_type: only allowed values are alphanumeric or numeric
+% # Description: Would be nice of you indicate what the variable means
+% # Range: Expected range in values (it is fine if you provide no info)
+% # Units: Self-descriptive (it is fine if you provide no info)
+%
+% Data provided in the tidyData_filename must have as headers the variables
+% indicaded in the first columns of the Dictionary
+
+%% Usage
+%
+% You can give it a try using the provided example files and running the
+% following commands on your Matlab session:
+
+Dictionary_filename='Dictionary_for_random_data.csv';
+tidyData_filename='random_data.csv';
+[tidyData, Dictionary] = import_tidyData_with_Dictionary(Dictionary_filename,tidyData_filename);
+
+%% Show the size of the outputs (ie, tidyData and Dictionary)
+whos tidyData Dictionary
+
+%% Show the content of the dictionary
+Dictionary
+
+%% Show the first elements of the actual data
+tidyData(1:10,:)
+
+%% More details
+%
+% As you can see, the file Dictionary_for_random_data has the 5 mandatory
+% columns that describe the data that will be imported. The second column of the
+% dictionary (Variable_type)is used to format the data contained in
+% random_data.csv. This Dictionary also indicates that the data has 8
+% variables: 
+%
+% # SubjectID, 
+% # Sex, 
+% # test, 
+% # Freq, 
+% # AMP, 
+% # Rise Time, 
+% # Decay Time, and 
+% # AREA.
+% 
+% As expected, the file random_data.csv has 8 columns, each corresponding
+% to the variables described in the dictionary.
+%% Post usage recomendations
+%
+% Do not forget to double check and compare the content of the outputs
+% tidyData and Dictionary with the files random_data.csv and
+% Dictionary_for_random_data.csv respectively
+
+%% Credits
+%
+%
+% Developer: Oscar Miranda-Dominguez
+%
+% First line of code: Jan 24, 2019
+##### SOURCE END #####
+--></body></html>

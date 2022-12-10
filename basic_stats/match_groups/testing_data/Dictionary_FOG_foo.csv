@@ -1,0 +1,8 @@
+Variable_name,Variable_type,Description,Range,Units
+subject_ID,alphanumeric,,,
+Group,alphanumeric,,,
+age,numeric,,,
+Gender,numeric,,,
+H_Y,alphanumeric,,,
+MDSUPDRSIII,numeric,,,
+disease_duration,numeric,,,

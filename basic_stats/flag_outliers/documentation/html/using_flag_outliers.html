@@ -1,0 +1,207 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>flag_outliers</title><meta name="generator" content="MATLAB 9.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-01-30"><meta name="DC.source" content="using_flag_outliers.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>flag_outliers</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Repo location</a></li><li><a href="#2">Intro</a></li><li><a href="#3">Usage</a></li><li><a href="#4">Example 1</a></li><li><a href="#9">Disclaimer</a></li><li><a href="#10">Post usage recomendations</a></li><li><a href="#11">Credits</a></li></ul></div><h2 id="1">Repo location</h2><p>This function is contained within basic_stats https://gitlab.com/Fair_lab/basic_stats</p><h2 id="2">Intro</h2><p>This function is designed to take a quick look to data that has been imported and saved in tifyformat using the function import_tidyData_with_Dictionary. Once the data is imported in Matlab as table, this function (flag_outliers) will identify outliers using matlab built in method to detect them.</p><h2 id="3">Usage</h2><p>THis function takes as input a table (T) and look for outliers adfer grouping data using the columns specified by the second argument. OL detection is made using Matlab's built-in capabilities</p><pre class="codeinput"><span class="comment">% Input variables</span>
+<span class="comment">%   T, table with data</span>
+<span class="comment">%</span>
+<span class="comment">%   columns_to_group_by, indicates the columns with variables to be used to</span>
+<span class="comment">%   group the data by</span>
+<span class="comment">%</span>
+<span class="comment">%   columns_to_be_tested, indicates the columns with data to be analyzed  columns_to_be_tested, indicates the columns with data to be analyzed</span>
+</pre><h2 id="4">Example 1</h2><p>First load the companion data provided here:</p><pre class="codeinput">load(<span class="string">'tidyData.mat'</span>)
+whos <span class="string">tidyData</span>
+</pre><pre class="codeoutput">  Name            Size            Bytes  Class    Attributes
+
+  tidyData      129x9             55109  table              
+
+</pre><p>Display the first 10 elements:</p><pre class="codeinput">tidyData(1:10,:)
+</pre><pre class="codeoutput">
+ans =
+
+  10&times;9 table
+
+    SubjectID    Sex      test        Freq      AMP      Rise_Time    Decay_Time     AREA     Treatment
+    _________    ___    _________    ______    ______    _________    __________    ______    _________
+
+    '31287'      'M'    'PU IPSC'    12.087     51.08         3        5.206        295.07    ISO 3    
+    '31503'      'F'    'PU IPSC'    9.6455    70.082     3.658        5.904        505.77    ISO 3    
+    '32041'      'F'    'PU IPSC'    2.1437    23.422    4.7613       5.5883        157.68    ISO 3    
+    '32050'      'F'    'PU IPSC'     4.996    38.635    5.0917       10.685        419.42    ISO 3    
+    '32228'      'M'    'PU IPSC'    5.6527    42.254    4.4943        8.805        362.39    ISO 3    
+    '32207'      'M'    'PU IPSC'    5.4553    37.677     5.441       10.515        411.63    ISO 3    
+    '32269'      'M'    'PU IPSC'    3.2833    47.737    4.5743       8.9103        405.88    ISO 3    
+    '31418'      'M'    'PU IPSC'    1.4387    28.497    4.8567       3.3103         138.8    Con      
+    '31348'      'F'    'PU IPSC'     4.299    42.017      3.55        6.387        302.44    Con      
+    '31970'      'M'    'PU IPSC'    4.5675    28.995    3.9813       7.1467        203.65    Con      
+
+</pre><p>This table will be the first argument to the function.</p><p>Now, let's suppose you want to to see if there are outliers for the outcomes in the columns 4 to 8 (ie Freq, AMP, Rise_Time, Decay_Time, and Area, respectively) after grouping them by the columns 3 and 9 (ie test and treatment, respectively).</p><p>Based on this, the vales for columns_to_group_by and columns_to_be_tested are</p><pre class="codeinput">columns_to_group_by=[3 9];<span class="comment">% ie ie test and treatment, respectively</span>
+columns_to_be_tested=4:8;<span class="comment">% ie Freq, AMP, Rise_Time, Decay_Time, and AREA, respectively</span>
+</pre><p>Now run the function and show the results</p><pre class="codeinput">outliers_table = flag_outliers(tidyData,columns_to_group_by,columns_to_be_tested)
+<span class="comment">%</span>
+</pre><pre class="codeoutput">
+outliers_table =
+
+  15&times;10 table
+
+    SubjectID    Sex      test        Freq       AMP      Rise_Time    Decay_Time     AREA     Treatment    outlier_var 
+    _________    ___    _________    _______    ______    _________    __________    ______    _________    ____________
+
+    '32227'      'M'    'PU EPSC'      1.231    22.284     3.908        3.985        127.79    Con          'Freq'      
+    '32227'      'M'    'V1 IPSC'     8.2975    47.358    2.6685       1820.5         202.3    Con          'Decay_Time'
+    '32031'      'F'    'PU EPSC'    0.42233    35.591    2.0773       3.0573        86.565    ISO 1        'AMP'       
+    '32031'      'F'    'PU IPSC'     2.4073    55.145    3.0883        5.104         266.8    ISO 1        'AMP'       
+    '31349'      'M'    'SS IPSC'     1.2803    41.307     4.225       6.4637        925.15    ISO 1        'AREA'      
+    '32134'      'M'    'V1 EPSC'     4.1283    18.523    3.0463        7.887        133.27    ISO 1        'Decay_Time'
+    '31349'      'M'    'V1 IPSC'     4.6985    132.98     4.011       13.793        448.99    ISO 1        'AMP'       
+    '31349'      'M'    'V1 IPSC'     4.6985    132.98     4.011       13.793        448.99    ISO 1        'Decay_Time'
+    '31349'      'M'    'V1 IPSC'     4.6985    132.98     4.011       13.793        448.99    ISO 1        'AREA'      
+    '31503'      'F'    'PU EPSC'      2.608    22.093    2.0885        0.867        34.443    ISO 3        'Freq'      
+    '32041'      'F'    'SS EPSC'     3.8152    11.725    3.6947       6.9437        84.538    ISO 3        'AMP'       
+    '31503'      'F'    'SS IPSC'     27.225     141.8     3.938        5.746         976.7    ISO 3        'Freq'      
+    '31503'      'F'    'SS IPSC'     27.225     141.8     3.938        5.746         976.7    ISO 3        'AMP'       
+    '31287'      'M'    'SS IPSC'      4.548    37.915     1.751        1.848        86.479    ISO 3        'Rise_Time' 
+    '31287'      'M'    'V1 EPSC'      8.051    28.566     1.739        2.006        63.301    ISO 3        'AMP'       
+
+</pre><p>As you can see, the output of the function is a table that only contains the variables that look like outliers. The output table has the same columns as the input table plus an extra column to indicate which outcome (out of the columns_to_be_tested) seems to be outlier</p><h2 id="9">Disclaimer</h2><p>I (Oscar) have tested the function using only 2 columns for columns_to_group_by. I have not had the time to test it with 1, 3 or more grouping variables (Jan 2019).</p><h2 id="10">Post usage recomendations</h2><p>Always look at the data and determine whether you trust this function or not</p><h2 id="11">Credits</h2><p>Code development: Oscar Miranda-Dominguez</p><p>First line of code: Jan 2019</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% flag_outliers
+%
+%% Repo location
+%
+% This function is contained within basic_stats
+% https://gitlab.com/Fair_lab/basic_stats
+%% Intro
+%
+% This function is designed to take a quick look to data that has been
+% imported and saved in tifyformat using the function
+% import_tidyData_with_Dictionary. Once the data is imported in Matlab as
+% table, this function (flag_outliers) will identify outliers using matlab
+% built in method to detect them. 
+%% Usage
+%
+%
+% THis function takes as input a table (T) and look for outliers adfer grouping
+% data using the columns specified by the second argument. OL detection is
+% made using Matlab's built-in capabilities
+
+% Input variables
+%   T, table with data
+%
+%   columns_to_group_by, indicates the columns with variables to be used to
+%   group the data by
+%
+%   columns_to_be_tested, indicates the columns with data to be analyzed  columns_to_be_tested, indicates the columns with data to be analyzed
+
+%% Example 1
+%
+% First load the companion data provided here:
+%
+load('tidyData.mat')
+whos tidyData
+%%
+% Display the first 10 elements:
+tidyData(1:10,:)
+%%
+% This table will be the first argument to the function.
+%
+% Now, let's suppose you want to to see if there are outliers for the
+% outcomes in the columns 4 to 8 (ie Freq, AMP, Rise_Time, Decay_Time, and
+% Area, respectively) after grouping them by the columns 3 and 9 (ie test
+% and treatment, respectively). 
+%
+% Based on this, the vales for columns_to_group_by and columns_to_be_tested
+% are
+%
+columns_to_group_by=[3 9];% ie ie test and treatment, respectively
+columns_to_be_tested=4:8;% ie Freq, AMP, Rise_Time, Decay_Time, and AREA, respectively
+%%
+% Now run the function and show the results
+outliers_table = flag_outliers(tidyData,columns_to_group_by,columns_to_be_tested)
+%
+%% 
+% As you can see, the output of the function is a table that only contains
+% the variables that look like outliers. The output table has the same
+% columns as the input table plus an extra column to indicate which
+% outcome (out of the columns_to_be_tested) seems to be outlier
+%% Disclaimer
+%
+% I (Oscar) have tested the function using only 2 columns for
+% columns_to_group_by. I have not had the time to test it with 1, 3 or more
+% grouping variables (Jan 2019).
+
+%% Post usage recomendations
+%
+% Always look at the data and determine whether you trust this function or
+% not
+%% Credits
+%
+% Code development: Oscar Miranda-Dominguez
+%
+% First line of code: Jan 2019
+##### SOURCE END #####
+--></body></html>

@@ -1,0 +1,43 @@
+subject_ID,Group,age,Gender,H_Y,MDSUPDRSIII,disease_duration,,
+Fake_ID_1,Fa,63,male,3,59,14.6,,1
+Fake_ID_2,Fa,67,female,3,52,1.4,,2
+Fake_ID_3,Fa,60,male,2,52,4.3,,3
+Fake_ID_4,Fa,70,male,2,50,15.6,,4
+Fake_ID_5,Fa,60,male,2,42,4.9,,5
+Fake_ID_6,Fa,81,male,2,42,3.6,,6
+Fake_ID_7,Fa,62,female,2,41,0,,7
+Fake_ID_8,Fa,73,male,2,40,5.8,,8
+Fake_ID_9,Fa,72,male,2,39,3.1,,9
+Fake_ID_10,Fa,54,male,2,37,5.4,,10
+Fake_ID_11,Fa,71,female,3,35,2.5,,11
+Fake_ID_12,Fa,75,male,2,34,2.8,,12
+Fake_ID_13,Fa,71,female,2,33,0.5,,13
+Fake_ID_14,Fa,71,male,2,32,1.1,,14
+Fake_ID_15,Fa,57,Male,2 Bilateral involvement without impairment of balance,29,3,,15
+Fake_ID_16,Fa,69,female,2,28,13.8,,16
+Fake_ID_17,Fa,68,Male,2 Bilateral involvement without impairment of balance,28,1,,17
+Fake_ID_18,Fa,76,Female,2 Bilateral involvement without impairment of balance,25,2,,18
+Fake_ID_19,Fa,73,Female,2 Bilateral involvement without impairment of balance,24,2,,19
+Fake_ID_20,Fa,76,Female,2 Bilateral involvement without impairment of balance,23,3,,20
+Fake_ID_21,Fa,57,Male,2,22,3,,21
+Fake_ID_22,Fa,62,Female,2 Bilateral involvement without impairment of balance,21,6,,22
+Fake_ID_23,Fa,70,Female,2 Bilateral involvement without impairment of balance,13,1,,23
+Fake_ID_24,Fp,56,male,4,82,25,,24
+Fake_ID_25,Fp,63,Male,2,68,17,,25
+Fake_ID_26,Fp,68,female,4,64,3.5,,26
+Fake_ID_27,Fp,75,Male,2,64,16,,27
+Fake_ID_28,Fp,82,female,4,62,12,,28
+Fake_ID_29,Fp,80,male,4,55,6.3,,29
+Fake_ID_30,Fp,63,Male,3,52,12,,30
+Fake_ID_31,Fp,62,male,3,50,5.4,,31
+Fake_ID_32,Fp,63,male,2,49,10.3,,32
+Fake_ID_33,Fp,67,Male,2,48,12,,33
+Fake_ID_34,Fp,62,male,2,41,9.7,,34
+Fake_ID_35,Fp,72,male,2,41,7.7,,35
+Fake_ID_36,Fp,77,male,2,40,6.1,,36
+Fake_ID_37,Fp,59,Male,2,35,24,,37
+Fake_ID_38,Fp,63,female,2,33,10.7,,38
+Fake_ID_39,Fp,62,male,3,31,21,,39
+Fake_ID_40,Fp,72,female,2,31,10.7,,40
+Fake_ID_41,Fp,66,female,2,25,1.6,,41
+Fake_ID_42,Fp,64,male,2,17,10.5,,42

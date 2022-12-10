@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Package installation files for Linux
+cd /panfs/roc/groups/4/miran045/reine097/projects/biceps/bin/linux/
+tar -czvf for_redistribution_files_only.tar.gz ./for_redistribution_files_only
+rm -r for_redistribution_files_only
+cd ../..
+git rm bin/linux/for_redistribution_files_only.tar.gz
+git add bin/linux/for_redistribution_files_only.tar.gz
+git commit -m "Created installation programs for Linux."
+git push
+
+echo "Installation files created"

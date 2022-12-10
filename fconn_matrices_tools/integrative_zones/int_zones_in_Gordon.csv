@@ -1,0 +1,31 @@
+roi_ix,name,shortname
+1,Default                      ,Def
+2,Default                      ,Def
+3,Cingulo Opercular            ,CiO
+4,Default                      ,Def
+5,Ventral Attention            ,VeA
+6,Ventral Attention            ,VeA
+7,Cingulo Opercular            ,CiO
+8,Retrosplenial Temporal       ,ReT
+9,No assignment                ,non
+10,Default                      ,Def
+11,Cingulo Opercular            ,CiO
+12,Default                      ,Def
+13,Default                      ,Def
+14,Default                      ,Def
+15,Cingulo Opercular            ,CiO
+16,Ventral Attention            ,VeA
+17,Ventral Attention            ,VeA
+18,No assignment                ,non
+19,Subcortical,Sub
+20,Subcortical,Sub
+21,Subcortical,Sub
+22,Subcortical,Sub
+23,Subcortical,Sub
+24,Subcortical,Sub
+25,Subcortical,Sub
+26,Subcortical,Sub
+27,Subcortical,Sub
+28,Subcortical,Sub
+29,Subcortical,Sub
+30,Subcortical,Sub

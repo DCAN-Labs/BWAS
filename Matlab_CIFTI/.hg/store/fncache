@@ -1,0 +1,5 @@
+data/ciftiopen.m.i
+data/.hgignore.i
+data/readme_Matlab_CIFTI.txt.i
+data/ciftisave.m.i
+data/ciftisavereset.m.i

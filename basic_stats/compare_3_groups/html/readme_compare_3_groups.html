@@ -1,0 +1,202 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>compare_3_groups</title><meta name="generator" content="MATLAB 9.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-01-31"><meta name="DC.source" content="readme_compare_3_groups.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>compare_3_groups</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Repo location</a></li><li><a href="#2">Intro</a></li><li><a href="#3">Usage</a></li><li><a href="#4">Example</a></li><li><a href="#5">Credits</a></li></ul></div><h2 id="1">Repo location</h2><p>This function is contained within basic_stats https://gitlab.com/Fair_lab/basic_stats</p><h2 id="2">Intro</h2><p>This function provides a quick way to run a statistical analysis on 3   groups and visualize results. It runs an anova test and posthocs comparing each group-pair   using a Kolmogorov test.</p><h2 id="3">Usage</h2><p>This function makes 3 things:</p><div><ul><li>compares 3 groups using an anova test</li><li>compare each pair of groups using a Kolmogorov-Smirnov (KS) test. It also compares the first group versus the other 2 groups combined also using a KS test. The order of the groups is determined alphabetically</li><li>visualize the results.</li></ul></div><p>For the anova test, data is normalized uisng z-scores. For ploting anf KS test, data is used as provided in the local_table.</p><p>Input variables (mandatory):</p><div><ul><li>local_table: The last element of the table should be the variable to be compared. The end-1 element is the grouping variable. Extra-columns are ignored</li></ul></div><p>Input variables (optional):</p><div><ul><li><b>tit</b>, text to be used as title for the figure</li><li><b>save_figure_flag</b>,"1" or "0", default "0". If set to one, figure is   saved</li><li><b>my_color</b>: a RGB colormap to be used to display the histograms. If not   provided, default colors are black, cyan, and blue.</li></ul></div><p>Output variables:</p><div><ul><li><b>p</b>, a vector with 5 p-values, one for the anova test and the remaining   four for each KS test</li><li><b>labels</b>, cell array with 5 elements, where each  entry corresponds to   the p value reported on the first output, respectively</li><li><b>labels_</b>, similar to previous one but spaces are replaced with   underscores (useful for combining data in tables)</li></ul></div><h2 id="4">Example</h2><p>First, lets make fake data with 3 groups and combine the data to make a table</p><p>define the number of groups</p><pre class="codeinput">N=3;
+<span class="comment">% define how many participants per groups</span>
+n=[20 21 25];
+<span class="comment">%</span>
+<span class="comment">% Name the groups</span>
+unique_labels{1}=<span class="string">'Group A'</span>;
+unique_labels{2}=<span class="string">'Group B'</span>;
+unique_labels{3}=<span class="string">'Group C'</span>;
+<span class="comment">% Make random noise adding an offset per group</span>
+offset=[0 5.1 5.2]; <span class="comment">%</span>
+y=[];
+labels=[];
+<span class="keyword">for</span> i=1:N
+    y=[y; randn(n(i),1)+offset(i)];
+    labels=[labels; repmat(unique_labels{i},n(i),1)];
+<span class="keyword">end</span>
+<span class="comment">%</span>
+<span class="comment">% Combine results and make a table</span>
+T=table(labels,y);
+<span class="comment">%</span>
+<span class="comment">% Run the test</span>
+[p, labels, labels_]=compare_3_groups(T)
+</pre><pre class="codeoutput">
+p =
+
+    0.0000
+    0.0000
+    0.0000
+    0.4004
+    0.0000
+
+
+labels =
+
+  5&times;1 cell array
+
+    {'ANOVA on outcome'  }
+    {'Group A vs Group B'}
+    {'Group A vs Group C'}
+    {'Group B vs Group C'}
+    {'Group A vs both'   }
+
+
+labels_ =
+
+  5&times;1 cell array
+
+    {'ANOVA_on_outcome'  }
+    {'Group_A_vs_Group_B'}
+    {'Group_A_vs_Group_C'}
+    {'Group_B_vs_Group_C'}
+    {'Group_A_vs_both'   }
+
+</pre><img vspace="5" hspace="5" src="readme_compare_3_groups_01.png" alt=""> <h2 id="5">Credits</h2><pre>Credits: Oscar Miranda-Dominguez | Jan 2019</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% compare_3_groups
+%
+%
+%% Repo location
+%
+% This function is contained within basic_stats https://gitlab.com/Fair_lab/basic_stats
+%% Intro
+%
+% This function provides a quick way to run a statistical analysis on 3
+%   groups and visualize results. It runs an anova test and posthocs comparing each group-pair
+%   using a Kolmogorov test.
+%% Usage
+%
+% This function makes 3 things:
+%
+% * compares 3 groups using an anova test
+% * compare each pair of groups using a Kolmogorov-Smirnov (KS) test. It also
+% compares the first group versus the other 2 groups combined also using a
+% KS test. The order of the groups is determined alphabetically
+% * visualize the results.
+%
+% For the anova test, data is normalized uisng z-scores. For ploting anf KS
+% test, data is used as provided in the local_table.
+%
+% Input variables (mandatory):
+%
+% * local_table: The last element of the table should be the variable to be
+% compared. The end-1 element is the grouping variable. Extra-columns are
+% ignored
+%
+% Input variables (optional):
+%
+% * *tit*, text to be used as title for the figure
+% * *save_figure_flag*,"1" or "0", default "0". If set to one, figure is
+%   saved
+% * *my_color*: a RGB colormap to be used to display the histograms. If not
+%   provided, default colors are black, cyan, and blue.
+%
+% Output variables:
+%
+% * *p*, a vector with 5 p-values, one for the anova test and the remaining
+%   four for each KS test
+% * *labels*, cell array with 5 elements, where each  entry corresponds to
+%   the p value reported on the first output, respectively
+% * *labels_*, similar to previous one but spaces are replaced with
+%   underscores (useful for combining data in tables)
+%% Example
+%
+% First, lets make fake data with 3 groups and combine the data to make a table
+%
+% define the number of groups
+N=3;
+% define how many participants per groups
+n=[20 21 25];
+%
+% Name the groups
+unique_labels{1}='Group A';
+unique_labels{2}='Group B';
+unique_labels{3}='Group C';
+% Make random noise adding an offset per group
+offset=[0 5.1 5.2]; %
+y=[];
+labels=[];
+for i=1:N
+    y=[y; randn(n(i),1)+offset(i)];
+    labels=[labels; repmat(unique_labels{i},n(i),1)];
+end
+%
+% Combine results and make a table
+T=table(labels,y);
+%
+% Run the test
+[p, labels, labels_]=compare_3_groups(T)
+%% Credits
+%
+%  Credits: Oscar Miranda-Dominguez | Jan 2019
+
+##### SOURCE END #####
+--></body></html>

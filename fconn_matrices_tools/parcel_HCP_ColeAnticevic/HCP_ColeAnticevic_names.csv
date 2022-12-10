@@ -1,0 +1,14 @@
+Number,name,shortname,R,G,B
+1,Visual 1,Vi1,0,0,255
+2,Visual 2,Vi2,100,0,255
+3,Somatomotor,Smn,0,255,255
+4,Cingulo-Opercular,CiO,153,0,153
+5,Dorsal-Attention,DAn,0,255,0
+6,Language,Lan,0,154,154
+7,Fronto-Parietal,FPn,255,255,0
+8,Auditory,Aud,249,61,251
+9,Default,Def,255,0,0
+10,Posterior-Multimodal,PMm,177,89,40
+11,Ventral-Multimodal,VMm,255,156,0
+12,Orbito-Affective,OrA,65,124,0
+13,Subcortical,Sub,0,0,0

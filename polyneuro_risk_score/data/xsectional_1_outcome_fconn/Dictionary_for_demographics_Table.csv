@@ -1,0 +1,7 @@
+Variable_name,Variable_type,Description,Range,Units
+id,alphanumeric,,,
+age,alphanumeric,,,
+color,alphanumeric,,,
+Diet,alphanumeric,,,
+betacarotene_PCA1,numeric,,,
+lutein_PCA1,numeric,,,

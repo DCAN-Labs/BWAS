@@ -1,0 +1,50 @@
+
+p{1}='/group_shares/PSYCH/code/external/utilities/gifti-1.4';
+p{2}='/group_shares/PSYCH/code/external/utilities/Matlab_CIFTI';
+for i=1:length(p)
+    addpath(genpath(p{i}));
+end
+%% Define the location of wb_command
+path_wb_c='/usr/global/hcp_workbench/bin_linux64/wb_command'; %path to wb_command
+%% Reading ciftis
+% You can read label files (parcels like gordon), dense time courses,
+% parcellated time courses, etc
+
+% Define the file you would like to read
+file_path='/group_shares/PSYCH/code/development/utilities/scalar_anova';
+
+% Pick one of the following files to see the content
+% filename='10050-2_FNL_preproc_Atlas.dtseries.nii';
+% filename='10050-2_FNL_preproc_Gordon.ptseries.nii';
+% filename='10050-2_FNL_preproc_Gordon_subcortical.ptseries.nii';
+
+files{1}='template.MyelinMap.32k_fs_LR.dscalar.nii';
+files{2}='template.sulc.32k_fs_LR.dscalar.nii';
+files{3}='template.thickness.32k_fs_LR.dscalar.nii';
+
+for filename=files
+    
+    
+    
+    
+    file=[file_path '/' filename{:}];
+    
+    cii=ciftiopen(file,path_wb_c);
+    newcii=cii;
+    X=newcii.cdata;
+    X=nan*X;
+    
+    
+    newcii.cdata=X; % Assigning your data to newcii (structure)
+    
+    ciftisave(newcii,[file_path '/' filename{:}],path_wb_c); % Making your cifti
+end
+%%
+filename{1}='template.MyelinMap.32k_fs_LR.dscalar.nii';
+filename{2}='template.sulc.32k_fs_LR.dscalar.nii';
+filename{3}='template.thickness.32k_fs_LR.dscalar.nii';
+for i=filename
+    i
+end
+%%
+ciftify_scalar_anovan(main_results,path_wb_c,cifti_scalar_template,hosting_directory)

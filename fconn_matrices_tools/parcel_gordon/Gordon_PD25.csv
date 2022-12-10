@@ -1,0 +1,358 @@
+ix,name,shortname,R,G,B
+1,Default                      ,Def,1,0,0
+2,Somatosensory medial (hand)  ,SMm,0,1,1
+3,Somatosensory lateral (mouth),SMl,1,0.502,0
+4,Default                      ,Def,1,0,0
+5,Visual                       ,Vis,0,0,1
+6,Default                      ,Def,1,0,0
+7,Fronto-Parietal              ,FrP,0.9,0.6,0
+8,Visual                       ,Vis,0,0,1
+9,Fronto-Parietal              ,FrP,0.9,0.6,0
+10,Auditory                     ,Aud,1,0,1
+11,No assignment                ,non,0.502,0.502,0.502
+12,Cingulo-Parietal             ,CiP,0,0.427,1
+13,Retrosplenial Temporal       ,ReT,0.863,0.863,0.863
+14,Retrosplenial Temporal       ,ReT,0.863,0.863,0.863
+15,Visual                       ,Vis,0,0,1
+16,Visual                       ,Vis,0,0,1
+17,Visual                       ,Vis,0,0,1
+18,No assignment                ,non,0.502,0.502,0.502
+19,No assignment                ,non,0.502,0.502,0.502
+20,Visual                       ,Vis,0,0,1
+21,Cingulo Opercular            ,CiO,0.502,0,0.502
+22,Cingulo Opercular            ,CiO,0.502,0,0.502
+23,Ventral Attention            ,VeA,0,0.502,0.502
+24,Fronto-Parietal              ,FrP,0.9,0.6,0
+25,Default                      ,Def,1,0,0
+26,Default                      ,Def,1,0,0
+27,Cingulo Opercular            ,CiO,0.502,0,0.502
+28,Cingulo Opercular            ,CiO,0.502,0,0.502
+29,Salience                     ,Sal,0,0,0
+30,Somatosensory medial (hand)  ,SMm,0,1,1
+31,Somatosensory medial (hand)  ,SMm,0,1,1
+32,Somatosensory medial (hand)  ,SMm,0,1,1
+33,Somatosensory medial (hand)  ,SMm,0,1,1
+34,Cingulo Opercular            ,CiO,0.502,0,0.502
+35,Somatosensory medial (hand)  ,SMm,0,1,1
+36,Somatosensory medial (hand)  ,SMm,0,1,1
+37,Somatosensory medial (hand)  ,SMm,0,1,1
+38,Somatosensory medial (hand)  ,SMm,0,1,1
+39,Somatosensory lateral (mouth),SMl,1,0.502,0
+40,Cingulo Opercular            ,CiO,0.502,0,0.502
+41,Dorsal Attention             ,DoA,0,0.863,0
+42,Dorsal Attention             ,DoA,0,0.863,0
+43,Dorsal Attention             ,DoA,0,0.863,0
+44,Default                      ,Def,1,0,0
+45,Somatosensory medial (hand)  ,SMm,0,1,1
+46,Somatosensory medial (hand)  ,SMm,0,1,1
+47,Somatosensory medial (hand)  ,SMm,0,1,1
+48,Somatosensory medial (hand)  ,SMm,0,1,1
+49,Dorsal Attention             ,DoA,0,0.863,0
+50,Somatosensory medial (hand)  ,SMm,0,1,1
+51,Dorsal Attention             ,DoA,0,0.863,0
+52,Dorsal Attention             ,DoA,0,0.863,0
+53,Somatosensory lateral (mouth),SMl,1,0.502,0
+54,Somatosensory medial (hand)  ,SMm,0,1,1
+55,Dorsal Attention             ,DoA,0,0.863,0
+56,Somatosensory medial (hand)  ,SMm,0,1,1
+57,Somatosensory medial (hand)  ,SMm,0,1,1
+58,Somatosensory medial (hand)  ,SMm,0,1,1
+59,Somatosensory lateral (mouth),SMl,1,0.502,0
+60,Ventral Attention            ,VeA,0,0.502,0.502
+61,Ventral Attention            ,VeA,0,0.502,0.502
+62,Ventral Attention            ,VeA,0,0.502,0.502
+63,Cingulo Opercular            ,CiO,0.502,0,0.502
+64,Auditory                     ,Aud,1,0,1
+65,Auditory                     ,Aud,1,0,1
+66,Auditory                     ,Aud,1,0,1
+67,Auditory                     ,Aud,1,0,1
+68,Auditory                     ,Aud,1,0,1
+69,Auditory                     ,Aud,1,0,1
+70,Auditory                     ,Aud,1,0,1
+71,Cingulo Opercular            ,CiO,0.502,0,0.502
+72,Cingulo Opercular            ,CiO,0.502,0,0.502
+73,No assignment                ,non,0.502,0.502,0.502
+74,Dorsal Attention             ,DoA,0,0.863,0
+75,Ventral Attention            ,VeA,0,0.502,0.502
+76,Cingulo Opercular            ,CiO,0.502,0,0.502
+77,Auditory                     ,Aud,1,0,1
+78,Fronto-Parietal              ,FrP,0.9,0.6,0
+79,Ventral Attention            ,VeA,0,0.502,0.502
+80,Ventral Attention            ,VeA,0,0.502,0.502
+81,Cingulo Opercular            ,CiO,0.502,0,0.502
+82,Cingulo Opercular            ,CiO,0.502,0,0.502
+83,Salience                     ,Sal,0,0,0
+84,Cingulo Opercular            ,CiO,0.502,0,0.502
+85,Ventral Attention            ,VeA,0,0.502,0.502
+86,Ventral Attention            ,VeA,0,0.502,0.502
+87,Dorsal Attention             ,DoA,0,0.863,0
+88,Dorsal Attention             ,DoA,0,0.863,0
+89,Cingulo-Parietal             ,CiP,0,0.427,1
+90,Visual                       ,Vis,0,0,1
+91,Dorsal Attention             ,DoA,0,0.863,0
+92,Dorsal Attention             ,DoA,0,0.863,0
+93,Cingulo-Parietal             ,CiP,0,0.427,1
+94,Default                      ,Def,1,0,0
+95,Dorsal Attention             ,DoA,0,0.863,0
+96,Fronto-Parietal              ,FrP,0.9,0.6,0
+97,Visual                       ,Vis,0,0,1
+98,Visual                       ,Vis,0,0,1
+99,Visual                       ,Vis,0,0,1
+100,Dorsal Attention             ,DoA,0,0.863,0
+101,Cingulo Opercular            ,CiO,0.502,0,0.502
+102,Auditory                     ,Aud,1,0,1
+103,Cingulo Opercular            ,CiO,0.502,0,0.502
+104,Auditory                     ,Aud,1,0,1
+105,Cingulo Opercular            ,CiO,0.502,0,0.502
+106,Dorsal Attention             ,DoA,0,0.863,0
+107,Dorsal Attention             ,DoA,0,0.863,0
+108,Fronto-Parietal              ,FrP,0.9,0.6,0
+109,Fronto-Parietal              ,FrP,0.9,0.6,0
+110,Dorsal Attention             ,DoA,0,0.863,0
+111,Cingulo Opercular            ,CiO,0.502,0,0.502
+112,Cingulo Opercular            ,CiO,0.502,0,0.502
+113,Dorsal Attention             ,DoA,0,0.863,0
+114,Default                      ,Def,1,0,0
+115,No assignment                ,non,0.502,0.502,0.502
+116,Default                      ,Def,1,0,0
+117,Default                      ,Def,1,0,0
+118,No assignment                ,non,0.502,0.502,0.502
+119,No assignment                ,non,0.502,0.502,0.502
+120,No assignment                ,non,0.502,0.502,0.502
+121,No assignment                ,non,0.502,0.502,0.502
+122,No assignment                ,non,0.502,0.502,0.502
+123,No assignment                ,non,0.502,0.502,0.502
+124,No assignment                ,non,0.502,0.502,0.502
+125,No assignment                ,non,0.502,0.502,0.502
+126,Default                      ,Def,1,0,0
+127,Default                      ,Def,1,0,0
+128,No assignment                ,non,0.502,0.502,0.502
+129,No assignment                ,non,0.502,0.502,0.502
+130,Retrosplenial Temporal       ,ReT,0.863,0.863,0.863
+131,Visual                       ,Vis,0,0,1
+132,Visual                       ,Vis,0,0,1
+133,No assignment                ,non,0.502,0.502,0.502
+134,No assignment                ,non,0.502,0.502,0.502
+135,No assignment                ,non,0.502,0.502,0.502
+136,Visual                       ,Vis,0,0,1
+137,Visual                       ,Vis,0,0,1
+138,Visual                       ,Vis,0,0,1
+139,Visual                       ,Vis,0,0,1
+140,Visual                       ,Vis,0,0,1
+141,Visual                       ,Vis,0,0,1
+142,No assignment                ,non,0.502,0.502,0.502
+143,Retrosplenial Temporal       ,ReT,0.863,0.863,0.863
+144,No assignment                ,non,0.502,0.502,0.502
+145,Default                      ,Def,1,0,0
+146,Default                      ,Def,1,0,0
+147,Cingulo Opercular            ,CiO,0.502,0,0.502
+148,Fronto-Parietal              ,FrP,0.9,0.6,0
+149,Fronto-Parietal              ,FrP,0.9,0.6,0
+150,Default                      ,Def,1,0,0
+151,Default                      ,Def,1,0,0
+152,Default                      ,Def,1,0,0
+153,Cingulo Opercular            ,CiO,0.502,0,0.502
+154,Default                      ,Def,1,0,0
+155,Dorsal Attention             ,DoA,0,0.863,0
+156,Default                      ,Def,1,0,0
+157,Default                      ,Def,1,0,0
+158,Ventral Attention            ,VeA,0,0.502,0.502
+159,No assignment                ,non,0.502,0.502,0.502
+160,Auditory                     ,Aud,1,0,1
+161,Ventral Attention            ,VeA,0,0.502,0.502
+162,Default                      ,Def,1,0,0
+163,Somatosensory medial (hand)  ,SMm,0,1,1
+164,Somatosensory lateral (mouth),SMl,1,0.502,0
+165,Default                      ,Def,1,0,0
+166,Visual                       ,Vis,0,0,1
+167,Fronto-Parietal              ,FrP,0.9,0.6,0
+168,Fronto-Parietal              ,FrP,0.9,0.6,0
+169,Visual                       ,Vis,0,0,1
+170,Fronto-Parietal              ,FrP,0.9,0.6,0
+171,Auditory                     ,Aud,1,0,1
+172,No assignment                ,non,0.502,0.502,0.502
+173,Cingulo-Parietal             ,CiP,0,0.427,1
+174,Retrosplenial Temporal       ,ReT,0.863,0.863,0.863
+175,Visual                       ,Vis,0,0,1
+176,Visual                       ,Vis,0,0,1
+177,Visual                       ,Vis,0,0,1
+178,No assignment                ,non,0.502,0.502,0.502
+179,No assignment                ,non,0.502,0.502,0.502
+180,Cingulo Opercular            ,CiO,0.502,0,0.502
+181,Cingulo Opercular            ,CiO,0.502,0,0.502
+182,Fronto-Parietal              ,FrP,0.9,0.6,0
+183,Salience                     ,Sal,0,0,0
+184,Default                      ,Def,1,0,0
+185,Cingulo Opercular            ,CiO,0.502,0,0.502
+186,Default                      ,Def,1,0,0
+187,Cingulo Opercular            ,CiO,0.502,0,0.502
+188,Cingulo Opercular            ,CiO,0.502,0,0.502
+189,Dorsal Attention             ,DoA,0,0.863,0
+190,Somatosensory medial (hand)  ,SMm,0,1,1
+191,Somatosensory medial (hand)  ,SMm,0,1,1
+192,Cingulo Opercular            ,CiO,0.502,0,0.502
+193,Somatosensory medial (hand)  ,SMm,0,1,1
+194,Somatosensory medial (hand)  ,SMm,0,1,1
+195,Somatosensory medial (hand)  ,SMm,0,1,1
+196,Cingulo Opercular            ,CiO,0.502,0,0.502
+197,Somatosensory lateral (mouth),SMl,1,0.502,0
+198,Cingulo Opercular            ,CiO,0.502,0,0.502
+199,Dorsal Attention             ,DoA,0,0.863,0
+200,Default                      ,Def,1,0,0
+201,Somatosensory medial (hand)  ,SMm,0,1,1
+202,Somatosensory medial (hand)  ,SMm,0,1,1
+203,Dorsal Attention             ,DoA,0,0.863,0
+204,Somatosensory medial (hand)  ,SMm,0,1,1
+205,Somatosensory medial (hand)  ,SMm,0,1,1
+206,Somatosensory medial (hand)  ,SMm,0,1,1
+207,Somatosensory medial (hand)  ,SMm,0,1,1
+208,Dorsal Attention             ,DoA,0,0.863,0
+209,Somatosensory medial (hand)  ,SMm,0,1,1
+210,Somatosensory medial (hand)  ,SMm,0,1,1
+211,Dorsal Attention             ,DoA,0,0.863,0
+212,Somatosensory lateral (mouth),SMl,1,0.502,0
+213,Somatosensory medial (hand)  ,SMm,0,1,1
+214,Somatosensory medial (hand)  ,SMm,0,1,1
+215,Somatosensory medial (hand)  ,SMm,0,1,1
+216,Somatosensory medial (hand)  ,SMm,0,1,1
+217,Somatosensory medial (hand)  ,SMm,0,1,1
+218,Somatosensory lateral (mouth),SMl,1,0.502,0
+219,Cingulo Opercular            ,CiO,0.502,0,0.502
+220,Default                      ,Def,1,0,0
+221,Ventral Attention            ,VeA,0,0.502,0.502
+222,Ventral Attention            ,VeA,0,0.502,0.502
+223,Cingulo Opercular            ,CiO,0.502,0,0.502
+224,Auditory                     ,Aud,1,0,1
+225,Default                      ,Def,1,0,0
+226,Ventral Attention            ,VeA,0,0.502,0.502
+227,Auditory                     ,Aud,1,0,1
+228,Ventral Attention            ,VeA,0,0.502,0.502
+229,Ventral Attention            ,VeA,0,0.502,0.502
+230,Auditory                     ,Aud,1,0,1
+231,Ventral Attention            ,VeA,0,0.502,0.502
+232,Auditory                     ,Aud,1,0,1
+233,Auditory                     ,Aud,1,0,1
+234,Cingulo Opercular            ,CiO,0.502,0,0.502
+235,Cingulo Opercular            ,CiO,0.502,0,0.502
+236,Dorsal Attention             ,DoA,0,0.863,0
+237,Ventral Attention            ,VeA,0,0.502,0.502
+238,Cingulo Opercular            ,CiO,0.502,0,0.502
+239,Auditory                     ,Aud,1,0,1
+240,Fronto-Parietal              ,FrP,0.9,0.6,0
+241,Ventral Attention            ,VeA,0,0.502,0.502
+242,Ventral Attention            ,VeA,0,0.502,0.502
+243,Ventral Attention            ,VeA,0,0.502,0.502
+244,Auditory                     ,Aud,1,0,1
+245,Cingulo Opercular            ,CiO,0.502,0,0.502
+246,Cingulo Opercular            ,CiO,0.502,0,0.502
+247,Salience                     ,Sal,0,0,0
+248,Cingulo Opercular            ,CiO,0.502,0,0.502
+249,Cingulo Opercular            ,CiO,0.502,0,0.502
+250,Dorsal Attention             ,DoA,0,0.863,0
+251,Visual                       ,Vis,0,0,1
+252,Dorsal Attention             ,DoA,0,0.863,0
+253,Dorsal Attention             ,DoA,0,0.863,0
+254,Cingulo-Parietal             ,CiP,0,0.427,1
+255,Visual                       ,Vis,0,0,1
+256,Visual                       ,Vis,0,0,1
+257,Default                      ,Def,1,0,0
+258,Visual                       ,Vis,0,0,1
+259,Default                      ,Def,1,0,0
+260,Fronto-Parietal              ,FrP,0.9,0.6,0
+261,Fronto-Parietal              ,FrP,0.9,0.6,0
+262,Dorsal Attention             ,DoA,0,0.863,0
+263,Visual                       ,Vis,0,0,1
+264,Visual                       ,Vis,0,0,1
+265,Visual                       ,Vis,0,0,1
+266,Dorsal Attention             ,DoA,0,0.863,0
+267,Visual                       ,Vis,0,0,1
+268,Auditory                     ,Aud,1,0,1
+269,Auditory                     ,Aud,1,0,1
+270,Somatosensory medial (hand)  ,SMm,0,1,1
+271,Dorsal Attention             ,DoA,0,0.863,0
+272,Fronto-Parietal              ,FrP,0.9,0.6,0
+273,Fronto-Parietal              ,FrP,0.9,0.6,0
+274,Cingulo Opercular            ,CiO,0.502,0,0.502
+275,Dorsal Attention             ,DoA,0,0.863,0
+276,Fronto-Parietal              ,FrP,0.9,0.6,0
+277,Fronto-Parietal              ,FrP,0.9,0.6,0
+278,Default                      ,Def,1,0,0
+279,Default                      ,Def,1,0,0
+280,No assignment                ,non,0.502,0.502,0.502
+281,No assignment                ,non,0.502,0.502,0.502
+282,No assignment                ,non,0.502,0.502,0.502
+283,No assignment                ,non,0.502,0.502,0.502
+284,No assignment                ,non,0.502,0.502,0.502
+285,No assignment                ,non,0.502,0.502,0.502
+286,No assignment                ,non,0.502,0.502,0.502
+287,No assignment                ,non,0.502,0.502,0.502
+288,No assignment                ,non,0.502,0.502,0.502
+289,No assignment                ,non,0.502,0.502,0.502
+290,Default                      ,Def,1,0,0
+291,No assignment                ,non,0.502,0.502,0.502
+292,No assignment                ,non,0.502,0.502,0.502
+293,Visual                       ,Vis,0,0,1
+294,Retrosplenial Temporal       ,ReT,0.863,0.863,0.863
+295,Retrosplenial Temporal       ,ReT,0.863,0.863,0.863
+296,No assignment                ,non,0.502,0.502,0.502
+297,No assignment                ,non,0.502,0.502,0.502
+298,Visual                       ,Vis,0,0,1
+299,Visual                       ,Vis,0,0,1
+300,No assignment                ,non,0.502,0.502,0.502
+301,No assignment                ,non,0.502,0.502,0.502
+302,No assignment                ,non,0.502,0.502,0.502
+303,No assignment                ,non,0.502,0.502,0.502
+304,No assignment                ,non,0.502,0.502,0.502
+305,No assignment                ,non,0.502,0.502,0.502
+306,No assignment                ,non,0.502,0.502,0.502
+307,Visual                       ,Vis,0,0,1
+308,Visual                       ,Vis,0,0,1
+309,Visual                       ,Vis,0,0,1
+310,Visual                       ,Vis,0,0,1
+311,Visual                       ,Vis,0,0,1
+312,No assignment                ,non,0.502,0.502,0.502
+313,Retrosplenial Temporal       ,ReT,0.863,0.863,0.863
+314,No assignment                ,non,0.502,0.502,0.502
+315,Default                      ,Def,1,0,0
+316,Default                      ,Def,1,0,0
+317,Cingulo Opercular            ,CiO,0.502,0,0.502
+318,Cingulo Opercular            ,CiO,0.502,0,0.502
+319,Fronto-Parietal              ,FrP,0.9,0.6,0
+320,Fronto-Parietal              ,FrP,0.9,0.6,0
+321,Default                      ,Def,1,0,0
+322,Default                      ,Def,1,0,0
+323,Default                      ,Def,1,0,0
+324,Default                      ,Def,1,0,0
+325,Default                      ,Def,1,0,0
+326,Default                      ,Def,1,0,0
+327,Fronto-Parietal              ,FrP,0.9,0.6,0
+328,Fronto-Parietal              ,FrP,0.9,0.6,0
+329,Auditory                     ,Aud,1,0,1
+330,Auditory                     ,Aud,1,0,1
+331,Default                      ,Def,1,0,0
+332,Ventral Attention            ,VeA,0,0.502,0.502
+333,Ventral Attention            ,VeA,0,0.502,0.502
+334,Motor-subcortical            ,MSC,0,0,0
+335,Motor-subcortical            ,MSC,0,0,0
+336,Motor-subcortical            ,MSC,0,0,0
+337,Motor-subcortical            ,MSC,0,0,0
+338,Motor-subcortical            ,MSC,0,0,0
+339,Motor-subcortical            ,MSC,0,0,0
+340,Motor-subcortical            ,MSC,0,0,0
+341,Motor-subcortical            ,MSC,0,0,0
+342,Motor-subcortical            ,MSC,0,0,0
+343,Motor-subcortical            ,MSC,0,0,0
+344,Motor-subcortical            ,MSC,0,0,0
+345,Motor-subcortical            ,MSC,0,0,0
+346,Motor-subcortical            ,MSC,0,0,0
+347,Motor-subcortical            ,MSC,0,0,0
+348,Others-subcortical           ,OSC,0,0,0
+349,Others-subcortical           ,OSC,0,0,0
+350,Others-subcortical           ,OSC,0,0,0
+351,Others-subcortical           ,OSC,0,0,0
+352,Others-subcortical           ,OSC,0,0,0
+353,Motor-subcortical            ,MSC,0,0,0
+354,Others-subcortical           ,OSC,0,0,0
+355,Others-subcortical           ,OSC,0,0,0
+356,Others-subcortical           ,OSC,0,0,0
+357,Motor-subcortical            ,MSC,0,0,0

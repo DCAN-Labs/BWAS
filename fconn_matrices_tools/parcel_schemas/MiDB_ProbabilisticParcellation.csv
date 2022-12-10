@@ -1,0 +1,81 @@
+ix,name,shortname,R,G,B
+1,Default Mode Network     ,Def,1,0,0
+2,Visual                   ,Vis,0,0,1
+3,Frontoparietal           ,FrP,0.9,0.6,0
+4,Auditory                 ,Aud,1,0,1
+5,Temporal Pole            ,TPL,0,0.4,0.6
+6,Parietal Medial Network  ,PMN,0.19,0.19,1
+7,Parieto-Occipital Network,PON,0.937,0.937,0.937
+8,Medial Temporal          ,MTL,0.4,1,0.4
+9,Parieto-Occipital Network,PON,0.937,0.937,0.937
+10,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+11,Salience                 ,Sal,1,1,1
+12,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+13,Sensorimotor Dorsal      ,SMd,0.4,1,1
+14,Sensorimotor Lateral     ,SMl,1,0.5,0
+15,Dorsal Attention Network ,DoA,0,0.863,0
+16,Default Mode Network     ,Def,1,0,0
+17,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+18,Default Mode Network     ,Def,1,0,0
+19,Ventral Attention        ,VeA,0,0.502,0.502
+20,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+21,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+22,Salience                 ,Sal,1,1,1
+23,Dorsal Attention Network ,DoA,0,0.863,0
+24,Parietal Medial Network  ,PMN,0.19,0.19,1
+25,Dorsal Attention Network ,DoA,0,0.863,0
+26,Default Mode Network     ,Def,1,0,0
+27,Default Mode Network     ,Def,1,0,0
+28,Default Mode Network     ,Def,1,0,0
+29,Visual                   ,Vis,0,0,1
+30,Frontoparietal           ,FrP,0.9,0.6,0
+31,Auditory                 ,Aud,1,0,1
+32,Temporal Pole            ,TPL,0,0.4,0.6
+33,Parietal Medial Network  ,PMN,0.19,0.19,1
+34,Parieto-Occipital Network,PON,0.937,0.937,0.937
+35,Medial Temporal          ,MTL,0.4,1,0.4
+36,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+37,Salience                 ,Sal,1,1,1
+38,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+39,Sensorimotor Dorsal      ,SMd,0.4,1,1
+40,Sensorimotor Lateral     ,SMl,1,0.5,0
+41,Dorsal Attention Network ,DoA,0,0.863,0
+42,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+43,Ventral Attention        ,VeA,0,0.502,0.502
+44,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+45,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+46,Salience                 ,Sal,1,1,1
+47,Dorsal Attention Network ,DoA,0,0.863,0
+48,Parietal Medial Network  ,PMN,0.19,0.19,1
+49,Dorsal Attention Network ,DoA,0,0.863,0
+50,Default Mode Network     ,Def,1,0,0
+51,Frontoparietal           ,FrP,0.9,0.6,0
+52,Default Mode Network     ,Def,1,0,0
+53,Default Mode Network     ,Def,1,0,0
+54,Parieto-Occipital Network,PON,0.937,0.937,0.937
+55,Default Mode Network     ,Def,1,0,0
+56,Temporal Pole            ,TPL,0,0.4,0.6
+57,Temporal Pole            ,TPL,0,0.4,0.6
+58,Salience                 ,Sal,1,1,1
+59,Salience                 ,Sal,1,1,1
+60,Sensorimotor Dorsal      ,SMd,0.4,1,1
+61,Dorsal Attention Network ,DoA,0,0.863,0
+62,Frontoparietal           ,FrP,0.9,0.6,0
+63,Default Mode Network     ,Def,1,0,0
+64,Frontoparietal           ,FrP,0.9,0.6,0
+65,Frontoparietal           ,FrP,0.9,0.6,0
+66,Sensorimotor Dorsal      ,SMd,0.4,1,1
+67,Sensorimotor Lateral     ,SMl,1,0.5,0
+68,Sensorimotor Dorsal      ,SMd,0.4,1,1
+69,Default Mode Network     ,Def,1,0,0
+70,Dorsal Attention Network ,DoA,0,0.863,0
+71,Default Mode Network     ,Def,1,0,0
+72,Frontoparietal           ,FrP,0.9,0.6,0
+73,Sensorimotor Dorsal      ,SMd,0.4,1,1
+74,Sensorimotor Lateral     ,SMl,1,0.5,0
+75,Medial Temporal          ,MTL,0.4,1,0.4
+76,Medial Temporal          ,MTL,0.4,1,0.4
+77,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+78,Cingulo-Opercular        ,CiO,0.501960784313726,0,0.501960784313726
+79,Visual                   ,Vis,0,0,1
+80,Visual                   ,Vis,0,0,1

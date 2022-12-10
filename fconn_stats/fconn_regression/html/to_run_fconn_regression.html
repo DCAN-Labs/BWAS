@@ -1,0 +1,353 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>To run fconn_regression</title><meta name="generator" content="MATLAB 9.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-07-13"><meta name="DC.source" content="to_run_fconn_regression.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>To run fconn_regression</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Credit and date</a></li><li><a href="#2">Intro</a></li><li><a href="#3">Dependancies</a></li><li><a href="#4">Inputs</a></li><li><a href="#5">Outputs</a></li><li><a href="#6">Example 1. Using random data to fit a model</a></li><li><a href="#7">Example 2</a></li></ul></div><h2 id="1">Credit and date</h2><p>Code developed by Oscar Miranda-Dominguez. Documentation started on July 13, 2018</p><h2 id="2">Intro</h2><p>This code was designed to fit linear models that using as input connectivity values can predict outcome.</p><p>This code consist on solving the equation <img src="to_run_fconn_regression_eq05455474603963478923.png" alt="$$ y = x \beta $$">, where <img src="to_run_fconn_regression_eq08873953494743909140.png" alt="$$y $$"> is a vector of length <img src="to_run_fconn_regression_eq07193383391687160905.png" alt="$$ n $$"> corresponding to the <img src="to_run_fconn_regression_eq00898274620738516237.png" alt="$$n $$"> observed outcomes and <img src="to_run_fconn_regression_eq07641014851795479721.png" alt="$$ x $$"> is a matrix of size <img src="to_run_fconn_regression_eq09475283557264652728.png" alt="$$ n \times m $$">, where <img src="to_run_fconn_regression_eq03250557490813100138.png" alt="$$ m $$"> is the number of connectivity values used for prediction. As in most of the cases <img src="to_run_fconn_regression_eq03250557490813100138.png" alt="$$ m $$"> will be larger than <img src="to_run_fconn_regression_eq07193383391687160905.png" alt="$$ n $$">, ie the number of unknowns will be larger than the number of konwns,  the problem will be and "ill-posed system" being prone to overfitting. For this reason the code solves the problem using <b>regularization</b> and <b>cross-validation</b>.</p><p>Inputs and outputs are robust enough such that the code can be used in multiple situations. This documentation includes the basic usage and a few examples that illustrate different typical cases.</p><h2 id="3">Dependancies</h2><p>Before using the code, make sure you have the functions this code needs:</p><p><b>Code in the airc</b>:</p><p>/public/code/internal/utilities/OSCAR_WIP/fconn_stats/fconn_regression</p><h2 id="4">Inputs</h2><p><b>main_table</b>: The predictor variables need to be formatted as a table of size <img src="to_run_fconn_regression_eq05280967186022168971.png" alt="$$ n\times(m+1) $$">, where the each row corresponds to the data for each case/observation. The first column corresponds to a label. This first column is ignored in this version, so you can use any label, but in the future this variable will be useful to implment mixed-effect models. The following columns correspond to the predictor variables.</p><p><b>within_headers</b>: This is a table of size <img src="to_run_fconn_regression_eq07427222119096199675.png" alt="$$ m \times 1 $$">. The content of this table is used as headers for the <b>main_table</b>. If the number of unique headers is 1, all the predictor variables will be used in the model. If there are more than 1 unique labels/headers, the code will fit as many models as unique labels/headers provided. Each model will be fit using all the columns of each unique label/header.</p><p><b>y</b>: vector of size %% n \times 1 $$ containing the predicted variables.</p><p><b>options</b>: Here you can specify the options for the model:</p><div><ul><li>options.method: Available methods are plsr (default) and tsvd (partial least squares regression and truncated singular value decomposition, respectively).</li><li>options.components: a number&gt;0 indicating how many components to preserv when calculating plsr or tsvd (regularization). Default is 1.</li><li>options.xval_left_N_out: Indicates how many samples are left-out for cross-validation of the model. Default is 0, ie no cross-validation</li><li>options.N: a number &gt;1 indicating how many times the data is partitioned to make cross-validation. Default is 1,000. To note, this code calculate the maximum number of combinations given the sample size (ie <img src="to_run_fconn_regression_eq07193383391687160905.png" alt="$$ n $$">) and the number of samples that will be left out (ie options.xval_left_N_out). If the number of requested repetitions is less than the total number of possible combinations, then options.N is reset to the maximum number of combinations to avoid repeated validations.</li><li>options.N_Null: a number &gt;1 that indicates how many times the data is shuffled to make a null hypothesis. The same parameters of the model are use for null data and predictions are compared for real assignments and null distribution.</li><li>options.comparison_method: Options to calculate the p-value of the predictions after compared to the null. Options are kolmogorov (default) and cumulative. For kolmogorov, the reportet p-value corresponds to the p-value of the kolmogorov test for the comparison between the predictions and the null. For cumulative. The p-value is calculated based on the cumulative distribution of the null.</li></ul></div><h2 id="5">Outputs</h2><div><ul><li>performance (out of sample performance): A cell with as many elements as models are fit. Each cell contains 4 performance indices for the alternative and the null hypotheses: I) R, correlation; II) mse, mean square error; III) mae, mean absolute error; IV) mean absolute positive error. Each performance index is calculated in out-of-sample data and is calculated based on the observed and predicted values.</li><li>W: A cell with as many elements as models are fit. Each cell has an array of size <img src="to_run_fconn_regression_eq06068189724452164280.png" alt="$$ N \times m $$"> that corresponds to the beta weights for each cross-validated replica (<img src="to_run_fconn_regression_eq01837623462793046366.png" alt="$$ N $$">) and each feature (<img src="to_run_fconn_regression_eq03250557490813100138.png" alt="$$ m $$">).</li><li>labels: a cell with as many elements as models are fit</li><li>P: A cell sime size as performance with the p-values for each performance metric</li></ul></div><h2 id="6">Example 1. Using random data to fit a model</h2><p>First we wil make random data to test the model</p><p>Fixing the seed of the random number generator for replicability</p><pre class="codeinput">seed=10;
+rng(seed)
+<span class="comment">%</span>
+<span class="comment">% Defining the number of predictor and predicted variables</span>
+n=1000; <span class="comment">% let say we have 10 observations</span>
+m=15; <span class="comment">% the model has m predictor variables</span>
+<span class="comment">%</span>
+B=rand(m,1);<span class="comment">% defining the true beta weights</span>
+x=randn(n,m);<span class="comment">% defining observations</span>
+y=x*B; <span class="comment">% predicted variable</span>
+y=y; <span class="comment">% adding noise</span>
+<span class="comment">%</span>
+<span class="comment">% Making the main table</span>
+main_table=[table(repmat(<span class="string">'Ct'</span>,n,1)) array2table(x)];
+<span class="comment">%</span>
+<span class="comment">% within_headers=cell(1,m);</span>
+<span class="comment">% within_headers(:)={'unique model'};</span>
+<span class="comment">% within_headers=cell2table(within_headers)</span>
+clc
+within_headers=table(repmat({<span class="string">'unique model'</span>},m,1));
+options.components=5;
+options.method=<span class="string">'tsvd'</span>;
+options.method=<span class="string">'plsr'</span>;
+[performance,Weights,labels,P]=fconn_regression(main_table, within_headers,y,options);
+<span class="comment">% show mean of estimated beta weights</span>
+mean(Weights{1})
+<span class="comment">% show real beta weigths</span>
+B'
+<span class="comment">% visualize the results</span>
+pull_data_show_results(performance,Weights,labels,P)
+<span class="comment">% To note, the last figure is only made to get the labes for the</span>
+<span class="comment">% distributions</span>
+</pre><pre class="codeoutput">
+ans =
+
+  Columns 1 through 7
+
+    0.7713    0.0208    0.6336    0.7488    0.4985    0.2248    0.1981
+
+  Columns 8 through 14
+
+    0.7605    0.1691    0.0883    0.6854    0.9534    0.0040    0.5122
+
+  Column 15
+
+    0.8126
+
+
+ans =
+
+  Columns 1 through 7
+
+    0.7713    0.0208    0.6336    0.7488    0.4985    0.2248    0.1981
+
+  Columns 8 through 14
+
+    0.7605    0.1691    0.0883    0.6854    0.9534    0.0039    0.5122
+
+  Column 15
+
+    0.8126
+
+Warning: Directory already exists. 
+</pre><img vspace="5" hspace="5" src="to_run_fconn_regression_01.png" alt=""> <img vspace="5" hspace="5" src="to_run_fconn_regression_02.png" alt=""> <img vspace="5" hspace="5" src="to_run_fconn_regression_03.png" alt=""> <img vspace="5" hspace="5" src="to_run_fconn_regression_04.png" alt=""> <h2 id="7">Example 2</h2><pre class="codeinput">clear
+cd <span class="string">example_data\</span>
+load(<span class="string">'fconn_regression_example2.mat'</span>);
+cd <span class="string">..</span>
+</pre><pre class="codeinput">clear <span class="string">between_design</span>
+between_design(1).name=<span class="string">'CT'</span>;
+n=length(y);
+<span class="keyword">for</span> i=1:n(1)
+    between_design(1).subgroups(i).name=ids{1}(i,:);
+    between_design(1).subgroups(i).ix=i;
+    between_design(1).subgroups(i).color=[1 1 1]*0;
+
+<span class="keyword">end</span>
+within_design=[];
+
+clear <span class="string">options</span>
+options.boxcox_transform=0;
+options.calculate_Fisher_Z_transform=0;
+options.resort_parcel_order=[];
+options.resort_parcel_order=[8 9];
+[main_table, within_headers, options, r,c] = extract_NN_table(M1,parcel,between_design,within_design,options);
+within_headers_all_all=within_headers;
+<span class="comment">%</span>
+
+out=1;
+fconn_reg_options.components=3;
+fconn_reg_options.xval_left_N_out=out;
+fconn_reg_options.N=10000;
+[performance,Weights,labels,P]=fconn_regression(main_table, within_headers,y,fconn_reg_options);
+pull_data_show_results(performance,Weights,labels,P)
+</pre><pre class="codeoutput">
+options = 
+
+  struct with fields:
+
+                    boxcox_transform: 0
+        calculate_Fisher_Z_transform: 0
+                 resort_parcel_order: [9 8]
+                          ix_sorting: [46&times;1 double]
+                     correction_type: 'tukey-kramer'
+                        save_figures: 1
+                     display_figures: 1
+    plot_uncorrected_NN_other_factor: 0
+                                p_th: 0.0500
+                        show_y_scale: 0
+                        show_p_value: 1
+                   is_connectotyping: 0
+                    avoid_main_table: 1
+                     use_half_matrix: 0
+
+Only 13 repetitions will be made since those are the unique combinations can be made given the partitions
+Only 13 repetitions will be made since those are the unique combinations can be made given the partitions
+Only 13 repetitions will be made since those are the unique combinations can be made given the partitions
+Warning: Directory already exists. 
+</pre><img vspace="5" hspace="5" src="to_run_fconn_regression_05.png" alt=""> <img vspace="5" hspace="5" src="to_run_fconn_regression_06.png" alt=""> <img vspace="5" hspace="5" src="to_run_fconn_regression_07.png" alt=""> <img vspace="5" hspace="5" src="to_run_fconn_regression_08.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% To run fconn_regression
+%
+%% Credit and date
+% Code developed by Oscar Miranda-Dominguez.
+% Documentation started on July 13, 2018
+%
+%
+%% Intro
+%
+%
+% This code was designed to fit linear models that using as input
+% connectivity values can predict outcome.
+%
+% This code consist on solving the equation $$ y = x \beta $$, where $$y $$
+% is a vector of length $$ n $$ corresponding to the $$n $$ observed
+% outcomes and $$ x $$ is a matrix of size $$ n \times m $$, where $$ m $$ is
+% the number of connectivity values used for prediction. As in most of the
+% cases $$ m $$ will be larger than $$ n $$, ie the number of unknowns will be larger than the number of konwns,  the problem will be and
+% "ill-posed system" being prone to overfitting. For this reason the code
+% solves the problem using *regularization* and *cross-validation*.
+%
+% Inputs and outputs are robust enough such that the code can be used in
+% multiple situations. This documentation includes the basic usage and a
+% few examples that illustrate different typical cases.
+%
+%% Dependancies
+%
+% Before using the code, make sure you have the functions this code needs:
+% 
+% *Code in the airc*:
+%
+% /public/code/internal/utilities/OSCAR_WIP/fconn_stats/fconn_regression
+%
+%
+%% Inputs
+% *main_table*: The predictor variables need to be formatted as a table of
+% size $$ n\times(m+1) $$, where the each row corresponds to the data for
+% each case/observation. The first column corresponds to a label. This
+% first column is ignored in this version, so you can use any label, but in
+% the future this variable will be useful to implment mixed-effect models.
+% The following columns correspond to the predictor variables.
+%
+% *within_headers*: This is a table of size $$ m \times 1 $$. The content
+% of this table is used as headers for the *main_table*. If the number of
+% unique headers is 1, all the predictor variables will be used in the
+% model. If there are more than 1 unique labels/headers, the code will fit
+% as many models as unique labels/headers provided. Each model will be fit using
+% all the columns of each unique label/header.
+%
+% *y*: vector of size %% n \times 1 $$ containing the predicted variables.
+%
+% *options*: Here you can specify the options for the model:
+%
+% * options.method: Available methods are plsr (default) and tsvd (partial least
+% squares regression and truncated singular value decomposition,
+% respectively).
+% * options.components: a number>0 indicating how many components to preserv
+% when calculating plsr or tsvd (regularization). Default is 1.
+% * options.xval_left_N_out: Indicates how many samples are left-out for
+% cross-validation of the model. Default is 0, ie no cross-validation
+% * options.N: a number >1 indicating how many times the data is partitioned
+% to make cross-validation. Default is 1,000. To note, this code calculate
+% the maximum number of combinations given the sample size (ie $$ n $$) and
+% the number of samples that will be left out (ie options.xval_left_N_out).
+% If the number of requested repetitions is less than the total number of
+% possible combinations, then options.N is reset to the maximum number of
+% combinations to avoid repeated validations.
+% * options.N_Null: a number >1 that indicates how many times the data is
+% shuffled to make a null hypothesis. The same parameters of the model are
+% use for null data and predictions are compared for real assignments and
+% null distribution. 
+% * options.comparison_method: Options to calculate the p-value of the
+% predictions after compared to the null. Options are kolmogorov (default)
+% and cumulative. For kolmogorov, the reportet p-value corresponds to the
+% p-value of the kolmogorov test for the comparison between the predictions
+% and the null. For cumulative. The p-value is calculated based on the
+% cumulative distribution of the null.
+%
+%% Outputs
+%
+% * performance (out of sample performance): A cell with as many elements as models are fit. Each cell
+% contains 4 performance indices for the alternative and the null
+% hypotheses: I) R, correlation; II) mse, mean square error; III) mae, mean
+% absolute error; IV) mean absolute positive error. Each performance index
+% is calculated in out-of-sample data and is calculated based on the
+% observed and predicted values.
+% * W: A cell with as many elements as models are fit. Each cell has an
+% array of size $$ N \times m $$ that corresponds to the beta weights for
+% each cross-validated replica ($$ N $$) and each feature ($$ m $$).
+% * labels: a cell with as many elements as models are fit
+% * P: A cell sime size as performance with the p-values for each
+% performance metric
+
+%% Example 1. Using random data to fit a model
+%
+% First we wil make random data to test the model
+%
+%
+% Fixing the seed of the random number generator for replicability
+seed=10;
+rng(seed)
+%
+% Defining the number of predictor and predicted variables
+n=1000; % let say we have 10 observations
+m=15; % the model has m predictor variables
+%
+B=rand(m,1);% defining the true beta weights
+x=randn(n,m);% defining observations
+y=x*B; % predicted variable
+y=y; % adding noise
+%
+% Making the main table
+main_table=[table(repmat('Ct',n,1)) array2table(x)];
+% 
+% within_headers=cell(1,m);
+% within_headers(:)={'unique model'};
+% within_headers=cell2table(within_headers)
+clc
+within_headers=table(repmat({'unique model'},m,1));
+options.components=5;
+options.method='tsvd';
+options.method='plsr';
+[performance,Weights,labels,P]=fconn_regression(main_table, within_headers,y,options);
+% show mean of estimated beta weights
+mean(Weights{1})
+% show real beta weigths
+B'
+% visualize the results
+pull_data_show_results(performance,Weights,labels,P)
+% To note, the last figure is only made to get the labes for the
+% distributions
+%% Example 2
+clear
+cd example_data\
+load('fconn_regression_example2.mat'); 
+cd ..
+
+%%
+clear between_design
+between_design(1).name='CT';
+n=length(y);
+for i=1:n(1)
+    between_design(1).subgroups(i).name=ids{1}(i,:);
+    between_design(1).subgroups(i).ix=i;
+    between_design(1).subgroups(i).color=[1 1 1]*0;
+    
+end
+within_design=[];
+
+clear options
+options.boxcox_transform=0;
+options.calculate_Fisher_Z_transform=0;
+options.resort_parcel_order=[];
+options.resort_parcel_order=[8 9];
+[main_table, within_headers, options, r,c] = extract_NN_table(M1,parcel,between_design,within_design,options);
+within_headers_all_all=within_headers;
+%
+
+out=1;
+fconn_reg_options.components=3;
+fconn_reg_options.xval_left_N_out=out;
+fconn_reg_options.N=10000;
+[performance,Weights,labels,P]=fconn_regression(main_table, within_headers,y,fconn_reg_options);
+pull_data_show_results(performance,Weights,labels,P)
+##### SOURCE END #####
+--></body></html>

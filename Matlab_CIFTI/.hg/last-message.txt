@@ -1,0 +1,3 @@
+Initial commit (code to read CIFTI files)
+Sept 23, 2014
+OMD

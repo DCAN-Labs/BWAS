@@ -1,0 +1,9 @@
+Variable,Design
+Delta_DTCgaitspeed,to_report
+FoG,group
+sex,to_report
+Age_at_session,to_report
+scanner_model,to_report
+MoCA_score,to_report
+Disease_duration_yrs,to_report
+MDS_UPDRSIII_score,to_report

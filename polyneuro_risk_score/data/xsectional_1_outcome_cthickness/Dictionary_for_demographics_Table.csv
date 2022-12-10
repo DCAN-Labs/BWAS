@@ -1,0 +1,10 @@
+Variable_name,Variable_type,Description,Range,Units
+id,alphanumeric,,,
+FoG,alphanumeric,,,
+sex,alphanumeric,,,
+Age_at_session,numeric,,,
+scanner_model,alphanumeric,,,
+var1,numeric,,,
+variable_2,numeric,,,
+var3,numeric,,,
+var4,numeric,,,

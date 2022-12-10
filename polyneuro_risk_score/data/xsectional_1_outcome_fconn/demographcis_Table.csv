@@ -1,0 +1,22 @@
+id,age,color,Diet,betacarotene_PCA1,lutein_PCA1
+fake_id_1,6m,Green ,BF,-0.216075384,197.1554336
+fake_id_2,6m,Green ,BF,13.05708005,732.1851859
+fake_id_3,6m,Green ,BF,5.500350441,591.8038629
+fake_id_4,6m,Green ,BF,-0.234550978,-60.44418444
+fake_id_5,6m,Green ,BF,5.668388919,196.4306737
+fake_id_6,6m,Green ,BF,7.980360138,277.6246036
+fake_id_7,6m,Green ,BF,5.649642983,311.375647
+fake_id_8,6m,Green ,BF,0.586776331,-97.3186489
+fake_id_9,6m,Blue  ,SF,-8.666131936,-88.66720877
+fake_id_10,6m,Blue  ,SF,-4.625531363,-123.3278259
+fake_id_11,6m,Blue  ,SF,-4.220800045,-129.4666685
+fake_id_12,6m,Blue  ,SF,2.602948013,-122.3485662
+fake_id_13,6m,Blue  ,SF,0.449187887,-108.6874409
+fake_id_14,6m,Blue  ,SF,2.856571009,-80.29901823
+fake_id_15,6m,Blue  ,SF,-5.537372041,-103.1873328
+fake_id_16,6m,Blue  ,SF,1.260070284,-116.7139857
+fake_id_17,6m,Orange,UF,-8.482486241,-178.0782848
+fake_id_18,6m,Orange,UF,-3.119961589,-176.9228812
+fake_id_19,6m,Orange,UF,-0.239203396,-182.4610604
+fake_id_20,6m,Orange,UF,-1.880697644,-185.6764507
+fake_id_21,6m,Orange,UF,-4.405868204,-193.5992354

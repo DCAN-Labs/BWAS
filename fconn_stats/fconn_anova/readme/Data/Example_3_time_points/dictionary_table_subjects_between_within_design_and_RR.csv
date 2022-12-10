@@ -1,0 +1,6 @@
+Variable_name,Variable_type,Description,Range,Units
+id,alphanumeric,,,
+consecutive_number,numeric,,,
+age,alphanumeric,,,
+Diet,alphanumeric,,,
+Resp_rate,numeric,,,

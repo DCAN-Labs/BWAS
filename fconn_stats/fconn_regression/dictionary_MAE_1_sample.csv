@@ -1,0 +1,6 @@
+Variable_name,Variable_type,Description,Range,Units
+Row,alphanumeric,,,
+min_mae,numeric,,,
+min_comp,numeric,,,
+d,numeric,,,
+out_for_xval,numeric,,,

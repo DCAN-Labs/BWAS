@@ -1,0 +1,31 @@
+ix,name,shortname,R,G,B
+1,Default                      ,Def,1,0,0
+2,Default                      ,Def,1,0,0
+3,Cingulo Opercular            ,CiO,0.502,0,0.502
+4,Default                      ,Def,1,0,0
+5,Ventral Attention            ,VeA,0,0.502,0.502
+6,Ventral Attention            ,VeA,0,0.502,0.502
+7,Cingulo Opercular            ,CiO,0.502,0,0.502
+8,Retrosplenial Temporal       ,ReT,0.863,0.863,0.863
+9,No assignment                ,non,0.502,0.502,0.502
+10,Default                      ,Def,1,0,0
+11,Cingulo Opercular            ,CiO,0.502,0,0.502
+12,Default                      ,Def,1,0,0
+13,Default                      ,Def,1,0,0
+14,Default                      ,Def,1,0,0
+15,Cingulo Opercular            ,CiO,0.502,0,0.502
+16,Ventral Attention            ,VeA,0,0.502,0.502
+17,Ventral Attention            ,VeA,0,0.502,0.502
+18,No assignment                ,non,0.502,0.502,0.502
+19,Subcortical,Sub,0,0,0
+20,Subcortical,Sub,0,0,0
+21,Subcortical,Sub,0,0,0
+22,Subcortical,Sub,0,0,0
+23,Subcortical,Sub,0,0,0
+24,Subcortical,Sub,0,0,0
+25,Subcortical,Sub,0,0,0
+26,Subcortical,Sub,0,0,0
+27,Subcortical,Sub,0,0,0
+28,Subcortical,Sub,0,0,0
+29,Subcortical,Sub,0,0,0
+30,Subcortical,Sub,0,0,0

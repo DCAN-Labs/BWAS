@@ -1,0 +1,3 @@
+function ciftify_scalar_anovan(main_results,path_wb_c,cifti_scalar_template,hosting_directory)
+
+mkdir (hosting_directory)

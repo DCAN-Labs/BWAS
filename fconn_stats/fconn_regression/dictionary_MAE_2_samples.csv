@@ -1,0 +1,9 @@
+Variable_name,Variable_type,Description,Range,Units
+Row,alphanumeric,,,
+n_comp,numeric,,,
+mae,numeric,,,
+p_uncorrected,numeric,,,
+rank_from_1_sample_mae,numeric,,,
+rank_from_1_sample_d,numeric,,,
+rank_from_2_samples_mae,numeric,,,
+rank_from_2_samples_p,numeric,,,

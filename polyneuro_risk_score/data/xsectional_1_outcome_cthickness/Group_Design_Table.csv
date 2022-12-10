@@ -1,0 +1,10 @@
+Variable,Design
+id,id
+FoG,between
+sex,between
+Age_at_session,between
+scanner_model,between
+var1,between
+variable_2,between
+var3,outcome
+var4,between

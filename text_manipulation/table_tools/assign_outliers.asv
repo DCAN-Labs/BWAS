@@ -1,0 +1,14 @@
+function T=assign_outliers(T,outliers)
+
+%% This function takes as input a Table with participants and tests and a structure with the ID and tasks that need to be flagged as outliers
+
+
+n_outliers=length(outliers);
+n_participants=size(trio_prisma_outliers,1);
+
+ids=table2array(T(:,2)
+
+for i=1:outliers
+    ix_test=find(ismember(T.Properties.VariableNames,outliers(i).task));
+    ix_id=
+end

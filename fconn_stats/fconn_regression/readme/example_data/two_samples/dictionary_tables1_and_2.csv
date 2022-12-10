@@ -1,0 +1,5 @@
+Variable_name,Variable_type,Description,Range,Units
+id,alphanumeric,,,
+Dx,alphanumeric,,,
+consecutive_number,numeric,,,
+score,numeric,,,

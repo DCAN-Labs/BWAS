@@ -1,0 +1,7 @@
+Variable_name,Variable_type,Description,Range,Units
+ROI,alphanumeric,,,
+Label,numeric,,,
+R,numeric,,,
+G,numeric,,,
+B,numeric,,,
+alpha,numeric,,,

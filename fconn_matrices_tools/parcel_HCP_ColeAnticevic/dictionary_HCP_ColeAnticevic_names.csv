@@ -1,0 +1,7 @@
+Variable_name,Variable_type,Description,Range,Units
+Number,numeric,,,
+name,alphanumeric,,,
+shortname,alphanumeric,,,
+R,numeric,,,
+G,numeric,,,
+B,numeric,,,

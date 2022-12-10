@@ -1,0 +1,9 @@
+Variable_name,Variable_type,Description,Range,Units
+SubjectID,alphanumeric,,,
+Sex,alphanumeric,,,
+test,alphanumeric,,,
+Freq,numeric,,,Hz
+AMP,numeric,,,pA
+Rise Time,numeric,,,ms
+Decay Time,numeric,,,ms
+AREA,numeric,,,fC

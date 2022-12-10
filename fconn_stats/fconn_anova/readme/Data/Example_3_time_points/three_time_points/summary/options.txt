@@ -1,0 +1,15 @@
+                     correction_type: 'dunn-sidak'
+                 resort_parcel_order: [5 6 7]
+        calculate_Fisher_Z_transform: 0
+                    boxcox_transform: 0
+                        save_figures: 1
+                     display_figures: 1
+                                p_th: 0.0500
+                        show_y_scale: 1
+                          ix_sorting: [35×1 double]
+    plot_uncorrected_NN_other_factor: 0
+                        show_p_value: 1
+                   is_connectotyping: 0
+                    avoid_main_table: 1
+                     use_half_matrix: 0
+

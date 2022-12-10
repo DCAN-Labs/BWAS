@@ -1,0 +1,4 @@
+Variable_name,Variable_type,Description,Range,Units
+ROI,alphanumeric,,,
+Network,alphanumeric,,,
+shortname,alphanumeric,,,

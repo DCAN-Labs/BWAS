@@ -1,0 +1,6 @@
+Variable_name,Variable_type,Description,Range,Units
+Network_Network,alphanumeric,,,
+R_alt,numeric,,,
+R_null,numeric,,,
+p_uncorrected,numeric,,,
+p_corrected,numeric,,,
